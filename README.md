@@ -9,6 +9,23 @@
 # WHAT
 A small script that is useful to track the level of 'infrastructure-as-code' coverage; ie how much of your AWS infrastructure is managed by Terraform?
 
+It checks the following AWS resources:
+- EC2 Instances
+- EC2 Security Groups
+- EC2 AMIs
+- EC2 Volumes
+- EC2 ALBs
+- EC2 ELBs
+- Lambda Functions
+- RDS Instances
+- VPCs
+- VPC Subnets
+- VPC Route Tables
+- VPC IGWs
+- VPC DHCP Options
+- VPC Network ACLs
+- S3 Buckets
+
 # WHY
 It can be difficult track the status of existing AWS resources when attempting to import a large existing project into Terraform managed infrastructure-as-code. One of the challenges is identifying what AWS resources are currently managed by Terraform and which ones still need to be imported. This script is an initial attempt.
 
