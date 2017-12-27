@@ -43,4 +43,4 @@ A series of bash functions that call the AWS API, performs some basic mathematic
   - A) Sure, see the TODO section.
 
 # TODO
-[https://github.com/chrisanthropic/terraform-infra-as-code-coverage-badges/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement]()
+[https://github.com/chrisanthropic/terraform-infra-as-code-coverage-badges/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement](Issues)
