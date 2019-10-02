@@ -33,7 +33,11 @@ It can be difficult track the status of existing AWS resources when attempting t
 A series of bash functions that call the AWS API, performs some basic mathematics as needed, and writes the output to a badge using [http://shields.io/](http://shields.io/)
 
 - `git clone` this repo
-- configure the variables at the top of the script
+- be sure to export any AWS_* environment variables (such as AWS_PROFILE or AWS_REGION)
+  - OUTPUT_DIR defaults to `/tmp`
+	- AWS_REGION defaults to `us-east-1`
+	- AWS_PROFILE has no default, so if it is not given, then AWS_ACCESS_KEY_ID and AWS_SECRET_KEY will need to be given
+  - BADGES_S3_BUCKET_NAME defaults to `terraform-infra-as-code-coverage-badges`
 - run the script
   - it will make the AWS API calls, checking all AWS resources in the specified region of your specified account for the existence of the specified tag.
   - it will calculate the total number of resources vs the total number of tagged resources
