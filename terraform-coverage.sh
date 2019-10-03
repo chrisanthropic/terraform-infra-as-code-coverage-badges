@@ -51,7 +51,7 @@ create_ec2_instances_badge () {
 
 write_ec2_instances_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/ec2-instances-current-coverage.svg" $(create_ec2_instances_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/ec2-instances-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-instances-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/ec2-instances-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-instances-current-coverage.svg
 }
 
 # Security Groups
@@ -72,7 +72,7 @@ create_ec2_security_groups_badge () {
 
 write_ec2_security_groups_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/ec2-security-groups-current-coverage.svg" $(create_ec2_security_groups_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/ec2-security-groups-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-security-groups-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/ec2-security-groups-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-security-groups-current-coverage.svg
 }
 
 # AMIs
@@ -97,7 +97,7 @@ create_ec2_amis_badge () {
 
 write_ec2_amis_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/ec2-ami-current-coverage.svg" $(create_ec2_amis_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/ec2-ami-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-ami-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/ec2-ami-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-ami-current-coverage.svg
 }
 
 # Volumes
@@ -118,7 +118,7 @@ create_ec2_volumes_badge () {
 
 write_ec2_volumes_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/ec2-volumes-current-coverage.svg" $(create_ec2_volumes_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/ec2-volumes-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-volumes-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/ec2-volumes-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-volumes-current-coverage.svg
 }
 
 # ALBs
@@ -139,7 +139,7 @@ create_ec2_albs_badge () {
 
 write_ec2_albs_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/ec2-albs-current-coverage.svg" $(create_ec2_albs_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/ec2-albs-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-albs-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/ec2-albs-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-albs-current-coverage.svg
 }
 
 # ELBs
@@ -168,7 +168,7 @@ create_ec2_elbs_badge () {
 
 write_ec2_elbs_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/ec2-elbs-current-coverage.svg" $(create_ec2_elbs_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/ec2-elbs-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-elbs-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/ec2-elbs-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-ec2-elbs-current-coverage.svg
 }
 
 # S3 Buckets
@@ -198,7 +198,7 @@ create_s3_buckets_badge () {
 
 write_s3_buckets_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/s3-buckets-current-coverage.svg" $(create_s3_buckets_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/s3-buckets-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-s3-buckets-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/s3-buckets-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-s3-buckets-current-coverage.svg
 }
 
 # Lambda Functions
@@ -227,7 +227,7 @@ create_lambda_functions_badge () {
 
 write_lambda_functions_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/lambda-functions-current-coverage.svg" $(create_lambda_functions_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/lambda-functions-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-lambda-functions-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/lambda-functions-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-lambda-functions-current-coverage.svg
 }
 
 # RDS
@@ -256,7 +256,7 @@ create_rds_instances_badge () {
 
 write_rds_instances_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/rds-instances-current-coverage.svg" $(create_rds_instances_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/rds-instances-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-rds-instances-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/rds-instances-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-rds-instances-current-coverage.svg
 }
 
 # VPC
@@ -277,7 +277,7 @@ create_vpc_badge () {
 
 write_vpcs_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/vpcs-current-coverage.svg" $(create_vpc_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/vpcs-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-vpcs-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/vpcs-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-vpcs-current-coverage.svg
 }
 
 # SUBNETS
@@ -298,7 +298,7 @@ create_subnets_badge () {
 
 write_subnets_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/subnets-current-coverage.svg" $(create_subnets_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/subnets-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-subnets-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/subnets-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-subnets-current-coverage.svg
 }
 
 # ROUTE_TABLES
@@ -319,7 +319,7 @@ create_route_tables_badge () {
 
 write_route_tables_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/route-tables-current-coverage.svg" $(create_route_tables_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/route-tables-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-route-tables-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/route-tables-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-route-tables-current-coverage.svg
 }
 # INTERNET GATEWAY
 find_all_igws () {
@@ -339,7 +339,7 @@ create_igws_badge () {
 
 write_igws_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/internet-gateways-current-coverage.svg" $(create_igws_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/internet-gateways-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-internet-gateways-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/internet-gateways-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-internet-gateways-current-coverage.svg
 }
 
 # DHCP OPTION SETS
@@ -360,7 +360,7 @@ create_dhcp_opts_badge () {
 
 write_dhcp_opts_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/dhcp-opts-current-coverage.svg" $(create_dhcp_opts_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/dhcp-opts-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-dhcp-opts-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/dhcp-opts-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-dhcp-opts-current-coverage.svg
 }
 
 # NETWORK ACLS
@@ -381,7 +381,7 @@ create_network_acls_badge () {
 
 write_network_acls_badge_to_s3 () {
   wget -O "$OUTPUT_PATH/network-acls-current-coverage.svg" $(create_network_acls_badge) >/dev/null 2>&1
-  aws s3 mv --quiet --acl public-read --cache-control max-age=60 /tmp/network-acls-current-coverage.svg s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-network-acls-current-coverage.svg
+  aws s3 mv --quiet --acl public-read --cache-control max-age=60 "${OUTPUT_PATH}/network-acls-current-coverage.svg" s3://"$BADGES_S3_BUCKET_NAME"/"$AWS_REGION"-network-acls-current-coverage.svg
 }
 
 write_dhcp_opts_badge_to_s3 &
