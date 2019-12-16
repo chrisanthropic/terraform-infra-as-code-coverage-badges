@@ -125,7 +125,7 @@ find_all_volumes () {
 }
 
 find_untagged_volumes () {
-  aws ec2 describe-volumes --region $AWS_REGION --profile "${AWS_PROFILE}"  --query "Volumes[].{ID: VolumeId}" --output json | jq -c '.[]' | grep -v $MANAGED_TAG
+  aws ec2 describe-volumes --region $AWS_REGION --profile "${AWS_PROFILE}"  --query "Volumes[].{ID: VolumeId,Tag: Tags[].Key}" --output json | jq -c '.[]' | grep -v $MANAGED_TAG
 }
 
 create_ec2_volumes_badge () {
